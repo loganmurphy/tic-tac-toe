@@ -1,3 +1,13 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./chalk_board.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
@@ -14,9 +24,10 @@ button {
   height: 4rem;
   margin-top: .5rem;
   margin-bottom: 0rem;
-  color: white;
+  border-style: none;
+  color: #3a3a3a;
   font-size: 2rem;
-  background-color: #ff5722;
+  background-color: whitesmoke;
 }
 
 .board-row:after {
@@ -30,8 +41,8 @@ button {
 }
 
 .square {
-  background: #fff;
-  color: green;
+  background: transparent;
+  color: whitesmoke;
   border: 1px solid #999;
   float: left;
   font-size: 3rem;
@@ -54,26 +65,23 @@ button {
 }
 
 .game {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
-  color: #ff5722;
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .game-info {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .game-board {
   margin-top: 2.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .hidden {

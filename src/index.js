@@ -125,13 +125,16 @@ class Game extends React.Component {
     }
 
     var movesList
+    var displayMoves
     if (this.state.movesShown) {
+      displayMoves = (<button onClick={() => this.toggle()}>Hide Moves</button>)
       movesList = (
       <ol>
         {moves}
       </ol>)
     } else {
       movesList = (<div></div>)
+      displayMoves = (<button onClick={() => this.toggle()}>Show Moves</button>)
     }
 
     return (
@@ -145,7 +148,8 @@ class Game extends React.Component {
         </div>
         <div className="game-info">
           <button onClick={() => this.clear()}>New Game</button>
-          <button onClick={() => this.toggle()}>Show Moves</button>
+          {/* <button onClick={() => this.toggle()}>Show Moves</button> */}
+          {displayMoves}
           {movesList}
         </div>
       </div>
