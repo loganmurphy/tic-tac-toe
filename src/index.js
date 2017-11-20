@@ -57,6 +57,7 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      movesShown: false,
     }
   }
 
@@ -72,8 +73,9 @@ class Game extends React.Component {
     console.log(this.state.history[0])
   }
 
-  // toggle(){
-  // }
+  toggle(){
+    this.setState({movesShown: !this.state.movesShown})
+  }
 
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
@@ -122,6 +124,16 @@ class Game extends React.Component {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     }
 
+    var movesList
+    if (this.state.movesShown) {
+      movesList = (
+      <ol>
+        {moves}
+      </ol>)
+    } else {
+      movesList = (<div></div>)
+    }
+
     return (
       <div className="game">
         <div>{status}</div>
@@ -134,7 +146,7 @@ class Game extends React.Component {
         <div className="game-info">
           <button onClick={() => this.clear()}>New Game</button>
           <button onClick={() => this.toggle()}>Show Moves</button>
-          <ol className='hidden'>{moves}</ol>
+          {movesList}
         </div>
       </div>
     );
